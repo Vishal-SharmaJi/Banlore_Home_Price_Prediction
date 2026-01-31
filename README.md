@@ -21,5 +21,3 @@ Project notes & presentation: `PPT_Bangalore-Home-Prices.pptx`.
 - Simple deployment instructions (local Flask server).
 
 ---
-
-## Repository structure (recommended)
