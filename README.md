@@ -7,7 +7,7 @@
 ## Project description
 This repository contains a reproducible pipeline to analyze Bangalore residential real-estate data, train regression models to predict house prices, and deploy the model via a lightweight Flask application (HTML/CSS/JS front-end). The project covers dataset cleaning, feature engineering, exploratory data analysis, model selection, evaluation, and a deployed demo showing price estimates and supporting utilities (EMI calculator, budget/loan tools).
 
-Project notes & presentation: `PPT_Bangalore-Home-Prices.pptx`. :contentReference[oaicite:0]{index=0}
+Project notes & presentation: `PPT_Bangalore-Home-Prices.pptx`.
 
 ---
 
