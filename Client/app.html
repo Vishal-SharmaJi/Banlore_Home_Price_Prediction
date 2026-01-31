@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Banglore Home Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+    <!-- Hamburger icon to show the navbar -->
+    <div class="menu-icon" onclick="toggleNavbar()">
+        &#9776;
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="budget calculatoe\budget-cal.html" class="nav-link" target="_blank" window.open="true">Budget
+                    Calculate</a></li>
+            <li><a href="emi-calculator-master\emi.html" class="nav-link" target="_blank" window.open="true">Know your
+                    EMI </a></li>
+            <li><a href="loan eligibilty\hi.html" class="nav-link" target="_blank" window.open="true">Loan
+                    Eligibility</a></li>
+        </ul>
+    </nav>
+
+    <div class="img"></div>
+
+
+
+    <form class="form">
+
+
+
+        <h2>Area (Square Feet)</h2>
+        <input class="area" type="email" id="uiSqft" class="floatLabel" name="Squareft" value="1000">
+        <h2>BHK</h2>
+        <div class="switch-field">
+            <input type="radio" id="radio-bhk-1" name="uiBHK" value="1" />
+            <label for="radio-bhk-1">1</label>
+            <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked />
+            <label for="radio-bhk-2">2</label>
+            <input type="radio" id="radio-bhk-3" name="uiBHK" value="3" />
+            <label for="radio-bhk-3">3</label>
+            <input type="radio" id="radio-bhk-4" name="uiBHK" value="4" />
+            <label for="radio-bhk-4">4</label>
+            <input type="radio" id="radio-bhk-5" name="uiBHK" value="5" />
+            <label for="radio-bhk-5">5</label>
+        </div>
+    </form>
+
+
+    <form class="form">
+        <h2>Bath</h2>
+        <div class="switch-field">
+            <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1" />
+            <label for="radio-bath-1">1</label>
+            <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked />
+            <label for="radio-bath-2">2</label>
+            <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3" />
+            <label for="radio-bath-3">3</label>
+            <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4" />
+            <label for="radio-bath-4">4</label>
+            <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5" />
+            <label for="radio-bath-5">5</label>
+        </div>
+        <h2>Location</h2>
+        <div>
+            <select class="location" name="" id="uiLocations">
+                <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+                <option>Electronic City</option>
+                <option>Rajaji Nagar</option>
+            </select>
+        </div>
+
+        <div id="uiEstimatedPrice" class="result">
+            <h2></h2>
+        </div>
+        <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+
+
+        <button style="position:relative;top:-70px;left:95%;" class="submit"
+            onclick="showImages(); changeImages(); loactionvalue()" type="button">View Flats</button>
+
+
+        <div class="image-block" id="imageBlock">
+            <p id="locatioval" style="text-align: center;"></p>
+            <img id="image1" src="" alt="❤">
+            <img id="image2" src="" alt="❤">
+            <img id="image3" src="" alt="❤">
+            <img id="image4" src="" alt="❤">
+        </div>
+
+
+
+
+        <button style="position:relative;top: -140px;;right:95%;" class="submit" onclick="showDealers()"
+            type="button">Compare Dealers</button>
+
+        <div class="photo-block-comparison" id="dealerBlock">
+
+        </div>
+
+        <button
+            style="position:relative;top: -610px;left: 235%; width: 50%; height: 320px;border-radius: 30px; z-index: 9999;"
+            class="submit" onclick="togglebankcomparison()" type="button"><b>No Money!<br><br> Get<br> a<br> Loan
+            </b></button>
+
+
+
+
+
+
+        <div class="blockloan hiddenloan" id="photoBlockloan">
+            <!-- <img class="photoloan" src="loan.jpg" alt="Photo"> -->
+
+            <!-- style="left:20% ;right:20%;background-color: #3ed752;"  -->
+            <div class="photo-block-comparison" id="Bank-comparison">
+                <h2><u>Loan Provider & Interest Rates&nbsp;Comparison</u></h2>
+                <br>
+                <table class="myUL">
+                    <tr>
+                        <th>Bank Name</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;Interest Rates (p.a)</th>
+                        <th>Contact</th>
+                        <th>Apply</th>
+                    </tr>
+                    <tr>
+                        <td>HDFC Bank</td>
+                        <td>10.25%-21.00%</td>
+                        <td>011 61606161</td>
+                        <td><button
+                                onclick="window.open('https://www.hdfc.com/housing-loans/home-loans?utm_campaign=HDFC_Bank&utm_medium=personal-popular-home-loan', '_blank')">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ICICI Bank</td>
+                        <td>10.50%-19.00%</td>
+                        <td>9017667777</td>
+                        <td><button
+                                onclick="window.open('https://www.icicibank.com/Personal-Banking/loans/home-loan/index.page', '_blank')">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Axis Bank</td>
+                        <td>10.25% onwards</td>
+                        <td>1860-419-5555</td>
+                        <td><button
+                                onclick="window.open('https://www.axisbank.com/retail/loans/home-loan?cta=product-life-goal-card2', '_blank')">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Yes Bank</td>
+                        <td>10.99% onwards</td>
+                        <td>1800 103 2222</td>
+                        <td><button
+                                onclick="window.open('https://www.yesbank.in/personal-banking/yes-individual/loans/home-loan', '_blank')">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Citibank</td>
+                        <td>9.99%-16.49%</td>
+                        <td>1-800-225-7211</td>
+                        <td><button
+                                onclick="window.open('https://www.online.citibank.co.in/loans/home-loans?eOfferCode=INHOLOTMMCIHL', '_blank')">Apply</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bank of India</td>
+                        <td>10.35%-12.35%</td>
+                        <td>022-66684444</td>
+                        <td><button
+                                onclick="window.open('https://bankofindia.co.in/home-loan', '_blank')">Apply</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+        <!-- <div style="left:20% ;right:20%;background-color: #3ed752;"
+class="photo-block-comparison" id="Bank-comparison" >
+  <h2><u>Loan Provider & Interest Rates&nbsp;Comparison</u></h2>
+  <br>
+  <table class="myUL">
+    <tr>
+        <th>Bank Name</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;Interest Rates (p.a)</th>
+        <th>Contact</th>
+    </tr>
+    <tr>
+        <td>HDFC Bank</td>
+        <td>10.25%-21.00%</td>
+        <td>011 61606161</td>
+    </tr>
+    <tr>
+        <td>ICICI Bank</td>
+        <td>10.50%-19.00%</td>
+        <td>9017667777</td>
+    </tr>
+    <tr>
+        <td>Axis Bank</td>
+        <td>10.25% onwards</td>
+        <td>1860-419-5555</td>
+    </tr>
+    <tr>
+        <td>Yes Bank</td>
+        <td>10.99% onwards</td>
+        <td>1800 103 2222</td>
+    </tr>
+    <tr>
+        <td>Citibank</td>
+        <td>9.99%-16.49%</td>
+        <td>1-800-225-7211</td>
+    </tr>
+    <tr>
+        <td>Bank of India</td>
+        <td>10.35%-12.35%</td>
+        <td>022-66684444</td>
+    </tr>
+</table>
+
+
+</div> -->
+
+        <!-- Video container -->
+        <div style="position:relative;top: -1300px; right:170%; overflow:hidden;width:430px;height:450px;">
+            <iframe src="https://player.vimeo.com/video/256297235?autoplay=1&loop=1&autopause=0"
+                style="position:absolute;top: 0;;right:-1490px;width:800%;height:100%;align-items: center; filter:brightness(1.2);"
+                frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+
+        <div style="position:relative;top: -1620px; left: 350px;; overflow:hidden;width:430px;height:450px;">
+
+            <a href="https://www.99acres.com/area-converter-utyp?preference=RENTAL&src_page=HP" target="_blank">
+            <img src="Images/area-convertor.jpg" width="200"
+                style="border-radius: 20px;box-shadow: 5px 5px 10px #0000004d;">
+            </a>
+        </div>
+
+
+
+
+    </form>
+</body>
+
+</html>
